@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FOOTER_CONTENT, FOOTER_LINKS } from '../content/footer';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -16,56 +17,33 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       
           <div className="space-y-4">
-            <h2 className="text-xl font-bold tracking-wide">DevelopYourself</h2>
+            <h2 className="text-xl font-bold tracking-wide">{FOOTER_CONTENT.logo}</h2>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Your personal emotional companion for self-growth and mindfulness. 
-              Track moods, gain insights, and develop emotional awareness.
+             {FOOTER_CONTENT.description}
             </p>
            
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-base font-semibold uppercase tracking-wide">Quick Links</h3>
+            <h3 className="text-base font-semibold uppercase tracking-wide">{FOOTER_CONTENT.quickLinksTitle}</h3>
             <ul className="space-y-2">
-              <li>
-                <a 
-                  href="#about" 
+              {FOOTER_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                  href={link.href}
                   className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
                 >
-                  About
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#features" 
-                  className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#privacy" 
-                  className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#support" 
-                  className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+             </ul>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-base font-semibold uppercase tracking-wide">Stay Updated</h3>
+            <h3 className="text-base font-semibold uppercase tracking-wide">{FOOTER_CONTENT.newsletterTitle}</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Get the latest updates on new features and emotional wellness tips.
+             {FOOTER_CONTENT.newsletterDescription}
             </p>
             <div className="flex">
               <input
@@ -88,7 +66,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-4 text-center">
         <p className="text-xs text-gray-400">
-          © 2025 DevelopYourself. All rights reserved.
+          {FOOTER_CONTENT.copyright}
         </p>
       </div>
     </footer>

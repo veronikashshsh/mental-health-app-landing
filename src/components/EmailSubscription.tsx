@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
 
 interface EmailSubscriptionProps {
-  onSubmit?: (email: string) => void; // Функція, що обробляє email
+  onSubmit?: (email: string) => void; 
 }
 
 const EmailSubscription: React.FC<EmailSubscriptionProps> = ({ onSubmit }) => {
