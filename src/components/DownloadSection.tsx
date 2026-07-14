@@ -1,6 +1,7 @@
 import React from "react";
 import PhoneImg from "../assets/phones2.png";
 import EmailSubscription from "./EmailSubscription";
+import { DOWNLOAD_CONTENT } from "../content/download";
 
 const DownloadSection: React.FC = () => {
   return (
@@ -10,10 +11,9 @@ const DownloadSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-3xl font-bold mb-6">Become a Beta Tester</h2>
+          <h2 className="text-3xl font-bold mb-6">{DOWNLOAD_CONTENT.title}</h2>
           <p className="mb-8 text-lg">
-            Available for both iOS and Android. Start your journey of emotional
-            awareness now!
+            {DOWNLOAD_CONTENT.description}
           </p>
           
          <div className="flex justify-center lg:justify-start md:justify-center gap-4">
